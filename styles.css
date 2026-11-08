@@ -843,3 +843,10 @@ footer .social svg{width:26px;height:26px}
   #actores .cast-bg .noimg{-webkit-mask-image:none!important;mask-image:none!important}
   #espectaculos .show-pic{max-width:36rem}
 }
+#actores .feature h3{color:#fff!important;-webkit-text-stroke:.09em #000!important;paint-order:stroke fill;text-shadow:5px 5px 0 #000,6px 6px 0 var(--lemon)!important;transform:rotate(-2deg);transform-origin:left center}
+@media(max-width:900px),(max-aspect-ratio:999/1000){
+  #actores .polas .pola{padding:.45rem!important;background:#fff!important;border:3px solid var(--ink)!important;border-radius:6px!important;box-shadow:5px 5px 0 var(--lemon)!important}
+  #actores .polas .p1{transform:rotate(3deg)}
+  #actores .polas .p2{transform:rotate(-3deg)}
+  #actores .polas{gap:1.6rem!important;padding-left:.4rem!important}
+}
