@@ -18,22 +18,14 @@ document.querySelectorAll('.card, .cast article, .stats li, .section h2, form').
   io.observe(el);
 });
 
-// Añade aquí nuevas funciones; las fechas pasadas se ocultan solas.
+// Solo fechas que figuren en Atrápalo; las pasadas se ocultan solas.
 const SHOWS = [
-  {
-    date: '2026-11-26T20:00',
-    title: 'Impro con limón',
-    venue: 'Café Teatre Tinta Roja',
-    address: 'C/ Creu dels Molers, 17 · Poble Sec, Barcelona',
-    price: '10 € con reserva · 15 € en taquilla',
-    url: 'https://www.atrapalo.com/entradas/impro-con-limon_e4906092/'
-  },
-  // Fechas ficticias de prueba: sustituir por las reales
-  { date: '2026-12-10T20:00', title: 'Impro con limón', venue: 'Café Teatre Tinta Roja', address: 'C/ Creu dels Molers, 17 · Poble Sec, Barcelona', price: '10 € con reserva · 15 € en taquilla', url: 'https://www.atrapalo.com/entradas/impro-con-limon_e4906092/' },
-  { date: '2026-12-17T20:00', title: 'Impro con limón', venue: 'Café Teatre Tinta Roja', address: 'C/ Creu dels Molers, 17 · Poble Sec, Barcelona', price: '10 € con reserva · 15 € en taquilla', url: 'https://www.atrapalo.com/entradas/impro-con-limon_e4906092/' },
-  { date: '2027-01-14T20:00', title: 'Impro con limón', venue: 'Café Teatre Tinta Roja', address: 'C/ Creu dels Molers, 17 · Poble Sec, Barcelona', price: '10 € con reserva · 15 € en taquilla', url: 'https://www.atrapalo.com/entradas/impro-con-limon_e4906092/' },
-  { date: '2027-01-21T20:00', title: 'Impro con limón', venue: 'Café Teatre Tinta Roja', address: 'C/ Creu dels Molers, 17 · Poble Sec, Barcelona', price: '10 € con reserva · 15 € en taquilla', url: 'https://www.atrapalo.com/entradas/impro-con-limon_e4906092/' },
-  { date: '2027-01-28T20:00', title: 'Impro con limón', venue: 'Café Teatre Tinta Roja', address: 'C/ Creu dels Molers, 17 · Poble Sec, Barcelona', price: '10 € con reserva · 15 € en taquilla', url: 'https://www.atrapalo.com/entradas/impro-con-limon_e4906092/' }
+  { date: '2026-11-26T20:00', title: 'Impro con limón', venue: 'Café Teatre Tinta Roja', address: 'C/ Creu dels Molers, 17 · Poble Sec, Barcelona', price: '10 € con reserva · 15 € en taquilla', url: 'https://www.tinta-roja.cat/es/espectaculos/impro-con-limon-261' },
+  { date: '2027-01-28T20:00', title: 'Impro con limón', venue: 'Café Teatre Tinta Roja', address: 'C/ Creu dels Molers, 17 · Poble Sec, Barcelona', price: '10 € con reserva · 15 € en taquilla', url: 'https://www.tinta-roja.cat/es/espectaculos/impro-con-limon-261' },
+  { date: '2027-02-25T20:00', title: 'Impro con limón', venue: 'Café Teatre Tinta Roja', address: 'C/ Creu dels Molers, 17 · Poble Sec, Barcelona', price: '10 € con reserva · 15 € en taquilla', url: 'https://www.tinta-roja.cat/es/espectaculos/impro-con-limon-261' },
+  { date: '2027-03-18T20:00', title: 'Impro con limón', venue: 'Café Teatre Tinta Roja', address: 'C/ Creu dels Molers, 17 · Poble Sec, Barcelona', price: '10 € con reserva · 15 € en taquilla', url: 'https://www.tinta-roja.cat/es/espectaculos/impro-con-limon-261' },
+  { date: '2027-04-22T20:00', title: 'Impro con limón', venue: 'Café Teatre Tinta Roja', address: 'C/ Creu dels Molers, 17 · Poble Sec, Barcelona', price: '10 € con reserva · 15 € en taquilla', url: 'https://www.tinta-roja.cat/es/espectaculos/impro-con-limon-261' },
+  { date: '2027-05-20T20:00', title: 'Impro con limón', venue: 'Café Teatre Tinta Roja', address: 'C/ Creu dels Molers, 17 · Poble Sec, Barcelona', price: '10 € con reserva · 15 € en taquilla', url: 'https://www.tinta-roja.cat/es/espectaculos/impro-con-limon-261' },
 ];
 const datesEl = document.getElementById('dates');
 const upcoming = SHOWS.filter(s => new Date(s.date) > new Date()).sort((a, b) => new Date(a.date) - new Date(b.date));
