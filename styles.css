@@ -879,3 +879,6 @@ footer .social svg{width:26px;height:26px}
   .hero .cta{gap:.6rem!important}
   .hero .cta .btn{font-size:1.05rem!important;padding:.35rem .8rem!important}
 }
+@media(max-width:900px),(max-aspect-ratio:999/1000){
+  .m-pic{border:3px solid var(--ink)!important;box-shadow:6px 6px 0 var(--lemon)!important}
+}
