@@ -1080,3 +1080,81 @@ footer .social svg{width:26px;height:26px}
 #espectaculos .btn[download]{box-shadow:5px 5px 0 var(--lemon)}
 #espectaculos .btn[download]:hover{box-shadow:7px 7px 0 var(--lemon)}
 #espectaculos .btn[download] svg{color:var(--ink);background:var(--lemon)}
+
+/* Compañía (escritorio): polaroid grande clavada con chincheta */
+@media(min-width:901px) and (min-aspect-ratio:1/1){
+  #compania .about .polaroid{background:#fff!important;padding:1.1rem 1.1rem 5rem!important;border:1px solid #ddd!important;border-radius:2px!important;box-shadow:0 18px 34px rgba(0,0,0,.4),0 3px 6px rgba(0,0,0,.25)!important;transform:translateY(-50%) rotate(3deg)!important;overflow:visible}
+  #compania .about .polaroid img{aspect-ratio:4/3;border-radius:0!important;box-shadow:inset 0 0 8px rgba(0,0,0,.4)!important}
+  #compania .about .polaroid::before{display:block!important;content:"";position:absolute;top:-1.3rem;left:50%;width:2.6rem;height:2.6rem;margin-left:-1.3rem;transform:none!important;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff7 0,#fff0 28%),radial-gradient(circle at 40% 35%,#ff6a5a,#d9261c 60%,#8f130c);box-shadow:3px 6px 6px rgba(0,0,0,.45),inset -2px -3px 4px rgba(0,0,0,.25);width:2.6rem;height:2.6rem;top:-1.3rem;z-index:2}
+}
+@media(min-width:901px) and (min-aspect-ratio:1/1){
+  #compania .about .polaroid::before{background:radial-gradient(circle at 35% 30%,#fff9 0,#fff0 30%),radial-gradient(circle at 40% 35%,#fff36a,#f7e51d 55%,#c9b100)!important}
+}
+
+/* Compañía (escritorio): cabe en una pantalla; datos como post-its clavados con chincheta */
+@media(min-width:901px) and (min-aspect-ratio:1/1){
+  #compania{padding-top:5.2rem;padding-bottom:2rem;min-height:0}
+  #compania>h2,#compania .about,#compania .sub,#compania .chips{max-width:47%}
+  #compania .about p{font-size:.95rem;line-height:1.45;margin:0 0 .5rem}
+  #compania .sub{margin-top:1rem;font-size:1.8rem}
+  #compania .about .polaroid{top:7.5rem;transform:rotate(3deg)!important;width:36vw!important;padding:.9rem .9rem 3.4rem!important}
+  #compania .about .stats{position:absolute;left:auto;right:calc(5vw + max(0px,(100vw - 1300px)/2 - 5vw));bottom:2.2rem;width:41vw;display:flex;gap:1.6rem;margin:0;justify-content:space-between}
+  #compania .about .stats li{position:relative;flex:1;border:0!important;border-radius:2px!important;background:var(--lemon)!important;color:var(--ink)!important;padding:1.5rem 1rem 1rem!important;box-shadow:0 8px 14px rgba(0,0,0,.3),0 2px 3px rgba(0,0,0,.2)!important;font-size:.95rem;line-height:1.25;transform:rotate(-3deg)}
+  #compania .about .stats li:nth-child(2){transform:rotate(2deg)}
+  #compania .about .stats li:nth-child(3){transform:rotate(-1.5deg)}
+  #compania .about .stats b{background:none!important;border:0!important;padding:0!important;display:block;font:900 1.9rem/1 'Londrina Solid',cursive;color:var(--ink)!important;margin-bottom:.2rem}
+  #compania .about .stats li::before{content:"";position:absolute;top:-.6rem;left:50%;width:1.3rem;height:1.3rem;margin-left:-.65rem;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff5 0,#fff0 30%),radial-gradient(circle at 40% 35%,#555,#111 70%);box-shadow:2px 4px 4px rgba(0,0,0,.4)}
+}
+@media(min-width:901px) and (min-aspect-ratio:1/1){
+  #compania .about .polaroid{right:5vw!important;width:min(36vw,520px)!important}
+  #compania .about .stats{right:5vw!important;width:min(41vw,590px)!important}
+}
+@media(min-width:901px) and (min-aspect-ratio:1/1){
+  #compania .about .polaroid,#compania .about .stats{right:max(5vw,calc((100vw - 1200px)/2))!important}
+}
+@media(min-width:901px) and (min-aspect-ratio:1/1){
+  #compania{--r:max(5vw,calc((100vw - 1200px)/2));--p:min(36vw,520px)}
+  #compania .about .stats{display:contents}
+  #compania .about .stats li{position:absolute!important;flex:none;width:11.5rem;background:#feff9c!important;z-index:3}
+  #compania .about .stats li:nth-child(1){top:9rem;right:calc(var(--r) + 1rem);transform:rotate(3deg)}
+  #compania .about .stats li:nth-child(2){top:28rem;right:calc(var(--r) + var(--p) - 5rem);transform:rotate(-4deg)}
+  #compania .about .stats li:nth-child(3){bottom:3.5rem;right:calc(var(--r) + 2rem);transform:rotate(2deg);width:12.5rem}
+  #compania .about .stats li::before{background:radial-gradient(circle at 35% 30%,#fff9 0,#fff0 35%),radial-gradient(circle at 40% 35%,#ffe94a,#f2c200 75%)!important;box-shadow:2px 4px 4px rgba(0,0,0,.45)!important}
+}
+#contratacion{background:linear-gradient(90deg,rgba(0,0,0,0) 0,rgba(0,0,0,.15) 28%,#000 52%),url(img/show/contratacion.jpg) left center/auto 100% no-repeat #000!important}
+@media(max-width:900px),(max-aspect-ratio:1/1){#contratacion{background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.75)),url(img/show/contratacion.jpg) center/cover no-repeat #000!important}}
+@media(min-width:901px) and (min-aspect-ratio:1/1){
+  #contratacion{background:#000!important;position:relative;isolation:isolate}
+  #contratacion::before{content:"";position:absolute;z-index:-1;left:0;top:0;bottom:0;aspect-ratio:3/4;background:url(img/show/contratacion.jpg) center/cover;-webkit-mask-image:linear-gradient(90deg,#000 55%,transparent 100%);mask-image:linear-gradient(90deg,#000 55%,transparent 100%)}
+}
+@media(min-width:901px) and (min-aspect-ratio:1/1){
+  #compania .about .stats li:nth-child(1){transform:rotate(-3deg)}
+  #compania .about .stats li{display:flex!important;flex-direction:column;justify-content:center;min-height:7.2rem;font-size:1.1rem!important;padding:1.6rem 1rem 1rem!important}
+  #compania .about .stats b{font-size:2.2rem!important}
+  #compania .about .stats li::before{width:2.6rem!important;height:2.6rem!important;top:-1.3rem!important;margin-left:-1.3rem!important;background:radial-gradient(circle at 35% 30%,#fff9 0,#fff0 30%),radial-gradient(circle at 40% 35%,#fff36a,#f7e51d 55%,#c9b100)!important;box-shadow:3px 6px 6px rgba(0,0,0,.45),inset -2px -3px 4px rgba(0,0,0,.25)!important}
+}
+#compania .about .polaroid::before{display:none!important}
+@media(min-width:901px) and (min-aspect-ratio:1/1){
+  #compania .about .stats li::before{width:1.3rem!important;height:1.3rem!important;top:-.6rem!important;margin-left:-.65rem!important;background:radial-gradient(circle at 35% 30%,#fff5 0,#fff0 30%),radial-gradient(circle at 40% 35%,#555,#111 70%)!important;box-shadow:2px 4px 4px rgba(0,0,0,.4)!important}
+}
+@media(min-width:901px) and (min-aspect-ratio:1/1){
+  #compania{display:flex;flex-direction:column;justify-content:center;padding-top:4.8rem}
+  #compania .about p{font-size:1.1rem;line-height:1.5;margin:0 0 .6rem}
+  #compania .sub{font-size:2rem}
+}
+@media(min-width:901px) and (min-aspect-ratio:1/1){
+  #compania{align-items:flex-start}
+}
+@media(min-width:901px) and (min-aspect-ratio:1/1){
+  #compania .about .polaroid{margin-top:5.2rem!important}
+  #compania .about .polaroid::before,#compania .about .stats li::before{display:block!important;content:"";position:absolute;top:-.9rem!important;left:50%;width:5rem!important;height:1.7rem!important;margin:0!important;border-radius:0!important;transform:translateX(-50%) rotate(-3deg)!important;background:rgba(250,230,40,.8)!important;box-shadow:0 1px 2px rgba(0,0,0,.25)!important;z-index:2}
+  #compania .about .stats li:nth-child(2)::before{transform:translateX(-50%) rotate(3deg)!important}
+}
+#compania .sub{background:none!important;border:0!important;box-shadow:none!important;padding:0!important;color:var(--ink)!important;text-shadow:4px 4px 0 var(--lemon)!important;font-size:2.8rem!important;line-height:.95;transform:rotate(-1.5deg)}
+#compania .about .polaroid::before{display:none!important}
+@media(max-width:900px),(max-aspect-ratio:1/1){
+  #compania .about .stats li{background:#feff9c!important;border:0!important;border-radius:2px!important;box-shadow:0 6px 12px rgba(0,0,0,.25)!important;transform:rotate(-1.2deg)}
+  #compania .about .stats li:nth-child(2){transform:rotate(1.2deg)}
+  #compania .about .stats b{background:none!important;border:0!important;padding:0!important;font-size:1.9rem}
+  #contratacion{background:linear-gradient(rgba(0,0,0,.4),rgba(0,0,0,.7)),url(img/show/contratacion.jpg) center 30%/cover no-repeat #000!important}
+}
