@@ -129,11 +129,12 @@ if (!upcoming.length) document.getElementById('dates-empty').hidden = false;
   const show = a => {
     arts.forEach(x => x.classList.toggle('sel', x === a));
     const src = a.querySelector('img');
-    const extra = (a.dataset.photos || '').split(',').filter(Boolean);
+    const extra = ((src && src.dataset.photos) || a.dataset.photos || '').split(',').filter(Boolean);
     // Mientras no haya 3 fotos reales, se rellenan con recortes de la primera
     const fill = [{ z: 1, p: '50% 20%' }, { z: 1.9, p: '50% 12%' }, { z: 1.6, p: '50% 60%' }];
+    const real = { z: 1, p: '50% 20%' };
     const photos = src
-      ? [src.src, ...extra].slice(0, 3).map((u, n) => ({ u, ...fill[n] }))
+      ? [src.src, ...extra].slice(0, 3).map((u, n) => (extra.length >= 2 ? { u, ...real } : { u, ...fill[n] }))
       : [];
     if (src) while (photos.length < 3) photos.push({ u: src.src, ...fill[photos.length] });
     const im = p => '<img src="' + p.u + '" alt="' + (src ? src.alt : '') + '" style="transform:scale(' + p.z + ');object-position:' + p.p + '">';
