@@ -882,3 +882,73 @@ footer .social svg{width:26px;height:26px}
 @media(max-width:900px),(max-aspect-ratio:999/1000){
   .m-pic{border:3px solid var(--ink)!important;box-shadow:6px 6px 0 var(--lemon)!important}
 }
+/* Actores: las fotos tienen fondo blanco, así que la sección se funde a blanco */
+#actores{background:#fff!important;color:var(--ink)}
+.cast-bg{background:#fff!important}
+.cast-bg::after{display:none!important}
+@media(max-width:900px),(max-aspect-ratio:999/1000){
+  #actores{background:#fff!important}
+}
+/* Fundido más corto: el fondo de las fotos ya es casi blanco */
+@media(min-width:901px) and (min-aspect-ratio:1/1){
+  .cast-bg img{
+    -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 12%,#000 88%,transparent 100%),linear-gradient(180deg,transparent 0,#000 6%,#000 94%,transparent 100%);
+    mask-image:linear-gradient(90deg,transparent 0,#000 12%,#000 88%,transparent 100%),linear-gradient(180deg,transparent 0,#000 6%,#000 94%,transparent 100%)}
+}
+
+/* Actores (escritorio): el fondo de la sección toma el color de fondo de cada foto */
+@media(min-width:901px) and (min-aspect-ratio:1/1){
+  #actores{background:var(--cast-bg,#fff)!important;transition:background .4s}
+  .cast-bg{background:var(--cast-bg,#fff)!important;transition:background .4s}
+}
+
+/* Escritorio: desplazar a la derecha las fotos cuyo rostro queda tapado por el texto */
+@media(min-width:901px) and (min-aspect-ratio:1/1){
+  .cast-bg[data-who="gerard"] img,.cast-bg[data-who="hector"] img,.cast-bg[data-who="javi"] img{translate:20vw 0}
+}
+
+/* Foto vertical de Lemon's impro night: se muestra entera, a toda la altura */
+@media(min-width:901px) and (min-aspect-ratio:1/1){
+  .show-bg img[src*="lemons"]{width:auto;height:100%;max-width:55%;object-fit:contain;right:6vw}
+}
+
+/* Lemon's impro night: fondo del mismo color que la foto y foto algo más grande */
+@media(min-width:901px) and (min-aspect-ratio:1/1){
+  #espectaculos{background:var(--show-bg,#111)!important;transition:background .4s}
+  .show-bg img[src*="lemons"]{scale:1.15;transform-origin:center}
+}
+
+@media(min-width:901px) and (min-aspect-ratio:1/1){
+  .cast-bg[data-who="gerard"] img,.cast-bg[data-who="javi"] img{translate:14vw 0}
+}
+
+@media(min-width:901px) and (min-aspect-ratio:1/1){
+  .cast-bg[data-who="susana"] img{scale:1.2;translate:0 -17vh;transform-origin:center top}
+}
+
+@media(min-width:901px) and (min-aspect-ratio:1/1){
+  .show-bg img[src*="lemons"]{scale:1.3;
+    -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 8%,#000 92%,transparent 100%),linear-gradient(180deg,transparent 0,#000 4%,#000 94%,transparent 100%);
+    mask-image:linear-gradient(90deg,transparent 0,#000 8%,#000 92%,transparent 100%),linear-gradient(180deg,transparent 0,#000 4%,#000 94%,transparent 100%)}
+}
+
+/* Miniatura de Susana: el limón de la cabeza queda en la parte alta de la foto */
+#actores .cast img[src*="susana/1"]{object-position:center 0%!important}
+
+/* Polaroids de Actores (escritorio): escalonadas y con distinta inclinación */
+@media(min-width:901px) and (min-aspect-ratio:1/1){
+  #actores .cast-wrap{--ps:min(22rem,32svh)}
+  #actores .polas{gap:2rem;margin-top:0;margin-bottom:0;justify-content:center}
+  #actores .polas .p1{transform:rotate(-6deg) translateX(-5rem)!important;z-index:1}
+  #actores .polas .p2{transform:rotate(5deg) translateX(1rem)!important;z-index:2}
+  #actores .polas .pola:hover{transform:rotate(0) scale(1.05)!important;z-index:3}
+}
+
+/* Polaroids de Actores (escritorio): aspecto de polaroid real */
+@media(min-width:901px) and (min-aspect-ratio:1/1){
+  #actores .cast-wrap{--ps:min(20rem,29svh)}
+  #actores .polas .pola{position:relative;overflow:visible;height:calc(var(--ps)*1.2)!important;padding:.8rem .8rem 3.2rem!important;background:#fff!important;border:1px solid #ddd!important;border-radius:2px!important;box-shadow:0 10px 22px rgba(0,0,0,.35),0 2px 4px rgba(0,0,0,.2)!important}
+  #actores .polas .pola .ph{border:0!important;border-radius:0!important;box-shadow:inset 0 0 6px rgba(0,0,0,.35)}
+  #actores .polas .pola::before{content:"";position:absolute;top:-.9rem;left:50%;width:5rem;height:1.7rem;transform:translateX(-50%) rotate(-3deg);background:rgba(250,230,40,.8);box-shadow:0 1px 2px rgba(0,0,0,.25)}
+  #actores .polas .pola:hover{background:#fff!important;box-shadow:0 14px 28px rgba(0,0,0,.4)!important}
+}

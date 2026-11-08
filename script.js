@@ -134,16 +134,18 @@ if (!upcoming.length) document.getElementById('dates-empty').hidden = false;
     const fill = [{ z: 1, p: '50% 20%' }, { z: 1.9, p: '50% 12%' }, { z: 1.6, p: '50% 60%' }];
     const real = { z: 1, p: '50% 20%' };
     const photos = src
-      ? [src.src, ...extra].slice(0, 3).map((u, n) => (extra.length >= 2 ? { u, ...real } : { u, ...fill[n] }))
+      ? [src.src, ...extra].slice(0, 3).map((u, n) => (extra.length ? { u, ...real } : { u, ...fill[n] }))
       : [];
-    if (src) while (photos.length < 3) photos.push({ u: src.src, ...fill[photos.length] });
+    if (src && !extra.length) while (photos.length < 3) photos.push({ u: src.src, ...fill[photos.length] });
     const im = p => '<img src="' + p.u + '" alt="' + (src ? src.alt : '') + '" style="transform:scale(' + p.z + ');object-position:' + p.p + '">';
     const nm = a.querySelector('h4').textContent;
     const nick = a.querySelector('.nick').textContent;
     const stage = '<div class="head"><h3>' + nm + '</h3><p class="nick">' + nick + '</p></div>';
+    document.getElementById('actores').style.setProperty('--cast-bg', (src && src.dataset.bg) || '#fff');
+    bg.dataset.who = src ? (src.getAttribute('src').split('/')[1] || '') : '';
     bg.innerHTML = src ? im(photos[0]) : '<div class="noimg">' + a.querySelector('.noimg').textContent + '</div>';
     polas.innerHTML = src
-      ? '<button type="button" class="pola p1" aria-label="Ver foto 2"><span class="ph">' + im(photos[1]) + '</span></button><button type="button" class="pola p2" aria-label="Ver foto 3"><span class="ph">' + im(photos[2]) + '</span></button>'
+      ? photos.slice(1).map((p, n) => '<button type="button" class="pola p' + (n + 1) + '" aria-label="Ver foto ' + (n + 2) + '"><span class="ph">' + im(p) + '</span></button>').join('')
       : '';
     feat.innerHTML = stage + '<div class="bio">' + a.querySelector('ul').outerHTML + '</div>';
     if (src) {
@@ -218,6 +220,7 @@ if (!upcoming.length) document.getElementById('dates-empty').hidden = false;
   const show = i => {
     const d = data[i];
     buttons.forEach((b, n) => b.classList.toggle('sel', n === i));
+    sec.style.setProperty('--show-bg', /lemons/.test(d.img) ? '#601219' : '#111');
     bg.innerHTML = '<img src="' + d.img + '" alt="' + d.alt + '">';
     feat.innerHTML = '<img class="show-pic" src="' + d.img + '" alt="' + d.alt + '"><span class="show-tag">' + d.tag + '</span><h3>' + d.title + '</h3><div class="show-text">' + d.text + d.link + '</div>';
     feat.classList.remove('swap'); void feat.offsetWidth; feat.classList.add('swap');
