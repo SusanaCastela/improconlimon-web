@@ -850,3 +850,22 @@ footer .social svg{width:26px;height:26px}
   #actores .polas .p2{transform:rotate(-3deg)}
   #actores .polas{gap:1.6rem!important;padding-left:.4rem!important}
 }
+/* Títulos de espectáculos con el formato de los nombres de actores */
+.show-feature h3{color:#fff!important;-webkit-text-stroke:.09em #000!important;paint-order:stroke fill;text-shadow:5px 5px 0 #000,6px 6px 0 var(--lemon)!important;transform:rotate(-2deg);transform-origin:left center}
+/* Móvil: todos seguidos, sin selector */
+.m-list{display:none}
+@media(max-width:900px),(max-aspect-ratio:999/1000){
+  #actores .cast-bg,#actores .cast-wrap,#espectaculos .show-bg,#espectaculos .show-wrap{display:none!important}
+  #actores .m-list,#espectaculos .m-list{display:flex;flex-direction:column;gap:3.2rem;width:100%;max-width:34rem;margin:0 auto;order:2}
+  .m-item{display:flex;flex-direction:column;align-items:flex-start;gap:1rem}
+  .m-item h3{margin:0;font-size:clamp(3rem,13vw,4.4rem);line-height:.95;color:#fff;-webkit-text-stroke:.09em #000;paint-order:stroke fill;text-shadow:5px 5px 0 #000,6px 6px 0 var(--lemon);transform:rotate(-2deg);transform-origin:left center}
+  .m-item .nick{margin:0;display:inline-block;padding:.3rem .8rem;background:var(--lemon);color:var(--ink);border:3px solid var(--ink);border-radius:6px;font:900 1.15rem/1.15 'Londrina Solid',cursive;transform:rotate(-1.5deg)}
+  .m-pic{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 20%;border:3px solid #fff;border-radius:var(--radius);box-shadow:6px 6px 0 var(--lemon);background:var(--lemon);display:block}
+  #espectaculos .m-pic{aspect-ratio:16/10;object-position:center}
+  .m-pic.noimg{display:grid;place-items:center;font:900 14rem 'Londrina Solid',cursive;color:var(--ink)}
+  .m-text{width:100%;background:#fff;color:var(--ink);border:3px solid var(--ink);border-radius:var(--radius);box-shadow:6px 6px 0 var(--lemon);padding:1rem 1.2rem}
+  .m-text ul{margin:0;padding-left:1.2rem;font-size:1.05rem;line-height:1.45}
+  .m-text p{margin:0 0 .7rem;font-size:1.05rem;line-height:1.45}
+  .m-text .link{display:inline-block}
+  #actores .m-text.show-text{padding:1rem 1.2rem}
+}

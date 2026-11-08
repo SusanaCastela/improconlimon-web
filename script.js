@@ -178,6 +178,14 @@ if (!upcoming.length) document.getElementById('dates-empty').hidden = false;
   });
   cast.classList.add('js');
   show(arts[0]);
+  const ml = document.createElement('div');
+  ml.className = 'm-list';
+  ml.innerHTML = arts.map(a => {
+    const im = a.querySelector('img');
+    const pic = im ? '<img class="m-pic" loading="lazy" src="' + im.src + '" alt="' + im.alt + '">' : '<div class="m-pic noimg">' + a.querySelector('.noimg').textContent + '</div>';
+    return '<article class="m-item"><h3>' + a.querySelector('h4').textContent + '</h3><p class="nick">' + a.querySelector('.nick').textContent + '</p>' + pic + '<div class="m-text">' + a.querySelector('ul').outerHTML + '</div></article>';
+  }).join('');
+  document.getElementById('actores').append(ml);
 })();
 
 // Espectáculos: lista a la izquierda, espectáculo destacado a la derecha (el primero por defecto)
@@ -222,6 +230,10 @@ if (!upcoming.length) document.getElementById('dates-empty').hidden = false;
     feat.classList.remove('swap'); void feat.offsetWidth; feat.classList.add('swap');
   };
   show(0);
+  const ml = document.createElement('div');
+  ml.className = 'm-list';
+  ml.innerHTML = data.map(d => '<article class="m-item"><h3>' + d.title + '</h3><span class="show-tag">' + d.tag + '</span><img class="m-pic" loading="lazy" src="' + d.img + '" alt="' + d.alt + '"><div class="m-text show-text">' + d.text + d.link + '</div></article>').join('');
+  sec.append(ml);
 })();
 
 /* Teléfonos: en ordenador copian el número */
