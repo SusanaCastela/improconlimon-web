@@ -795,3 +795,51 @@ footer .social svg{width:26px;height:26px}
   .section{min-height:0!important;height:auto!important}
   #videos,#contratacion{overflow:visible}
 }
+
+/* ===== Actores y Espectáculos: diseño móvil/tablet vertical ===== */
+.show-pic{display:none}
+@media(max-width:900px),(max-aspect-ratio:999/1000){
+  /* Actores */
+  #actores{display:flex!important;flex-direction:column;align-items:stretch;gap:1.2rem;height:auto!important;min-height:0!important;padding:5.5rem 5vw 3rem!important;background:#111!important;overflow:hidden}
+  #actores>h2{order:1;align-self:flex-start;margin:0!important}
+  #actores .cast-wrap{display:contents!important}
+  #actores .cast{order:2;position:relative;display:flex!important;flex-direction:row!important;flex-wrap:nowrap!important;justify-content:flex-start!important;gap:.8rem!important;overflow-x:auto;margin:0 -5vw!important;padding:.6rem 5vw 1rem!important;-webkit-overflow-scrolling:touch}
+  #actores .cast article{flex:0 0 5.2rem!important;width:5.2rem;flex-direction:column!important;gap:0!important;padding:0!important;transform:none!important;background:#fff;border:3px solid var(--ink);box-shadow:3px 3px 0 var(--lemon)}
+  #actores .cast article.sel{background:var(--lemon);transform:translateY(-4px)!important;box-shadow:4px 4px 0 #fff}
+  #actores .cast img,#actores .cast .noimg{width:100%!important;height:auto!important;flex:none!important;aspect-ratio:1;border:0!important;border-bottom:3px solid var(--ink)!important;border-radius:0!important}
+  #actores .cast .noimg{font-size:2.2rem}
+  #actores .cast h4{font-size:.95rem;line-height:1.1;padding:.25rem!important;text-align:center}
+  #actores .cast .nick,#actores .cast ul{display:none!important}
+  #actores .cast-bg{order:3;position:relative!important;inset:auto!important;width:100%!important;max-width:none!important;aspect-ratio:4/5;max-height:62svh;margin:0 auto!important;border:3px solid #fff;border-radius:var(--radius);box-shadow:6px 6px 0 var(--lemon);overflow:hidden;background:var(--lemon)}
+  #actores .cast-bg::after{display:none}
+  #actores .cast-bg img{position:static!important;width:100%!important;height:100%!important;max-width:none!important;max-height:none!important;object-fit:cover;object-position:50% 20%;-webkit-mask-image:none!important;mask-image:none!important;transform:none!important;margin:0}
+  #actores .cast-bg .noimg{font-size:14rem;height:100%}
+  #actores .feature{order:4;position:static!important;display:block!important;height:auto!important;padding:0!important;background:none!important;border:0!important;box-shadow:none!important;overflow:visible;color:#fff}
+  #actores .feature .head{position:static!important;max-width:none!important;margin-bottom:1rem}
+  #actores .feature h3{font-size:clamp(3rem,13vw,4.4rem);line-height:.95;color:#fff;-webkit-text-stroke:.07em #000;paint-order:stroke fill;text-shadow:4px 4px 0 var(--lemon)}
+  #actores .feature .nick{font-size:1.15rem}
+  #actores .feature .bio{position:static!important;width:auto!important;margin:0!important;padding:1rem 1.2rem}
+  #actores .feature .bio ul{font-size:1.05rem;line-height:1.45}
+  #actores .polas{order:5;position:static!important;display:flex!important;flex-direction:row!important;justify-content:flex-start!important;gap:1.2rem!important;margin:.5rem 0 0!important;padding:0!important}
+  #actores .polas .pola{width:min(9rem,38vw)!important;aspect-ratio:1;flex:none;margin:0!important}
+
+  /* Espectáculos */
+  #espectaculos{display:flex!important;flex-direction:column;gap:1.2rem;height:auto!important;min-height:0!important;padding:5.5rem 5vw 3rem!important;background:#111!important;overflow:hidden}
+  #espectaculos .show-bg{display:none!important}
+  #espectaculos>h2{align-self:flex-start;margin:0!important}
+  #espectaculos .show-wrap{display:flex!important;flex-direction:column;gap:1.4rem;width:100%;max-width:none!important}
+  #espectaculos .show-list{order:0;display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));gap:.9rem}
+  #espectaculos .show-list button{flex-direction:column;align-items:stretch;gap:.4rem;padding:.35rem .35rem .5rem!important;height:auto!important;text-align:center;transform:none!important}
+  #espectaculos .show-list button.sel{transform:translateY(-3px)!important}
+  #espectaculos .show-list button img{width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;border-radius:4px}
+  #espectaculos .show-list button span{font-size:1.2rem;line-height:1.05}
+  #espectaculos .show-feature{order:1;display:flex;flex-direction:column;align-items:flex-start;gap:1rem}
+  #espectaculos .show-pic{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;border:3px solid #fff;border-radius:var(--radius);box-shadow:6px 6px 0 var(--lemon)}
+  #espectaculos .show-feature h3{font-size:clamp(2.6rem,11vw,3.8rem);margin:0}
+  #espectaculos .show-text{width:100%}
+}
+@media(max-width:900px),(max-aspect-ratio:999/1000){
+  #actores .cast-bg{max-width:min(100%,30rem)!important;margin:0!important}
+  #actores .cast-bg .noimg{-webkit-mask-image:none!important;mask-image:none!important}
+  #espectaculos .show-pic{max-width:36rem}
+}

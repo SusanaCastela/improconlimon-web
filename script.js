@@ -161,7 +161,10 @@ if (!upcoming.length) document.getElementById('dates-empty').hidden = false;
       });
     }
     feat.classList.remove('swap'); void feat.offsetWidth; feat.classList.add('swap');
+    if (cast.scrollWidth > cast.clientWidth) cast.scrollTo({ left: a.offsetLeft - (cast.clientWidth - a.offsetWidth) / 2, behavior: first ? 'auto' : 'smooth' });
+    first = false;
   };
+  let first = true;
   arts.forEach(a => {
     cast.appendChild(a);
     const t = document.createElement('div');
@@ -215,7 +218,7 @@ if (!upcoming.length) document.getElementById('dates-empty').hidden = false;
     const d = data[i];
     buttons.forEach((b, n) => b.classList.toggle('sel', n === i));
     bg.innerHTML = '<img src="' + d.img + '" alt="' + d.alt + '">';
-    feat.innerHTML = '<span class="show-tag">' + d.tag + '</span><h3>' + d.title + '</h3><div class="show-text">' + d.text + d.link + '</div>';
+    feat.innerHTML = '<img class="show-pic" src="' + d.img + '" alt="' + d.alt + '"><span class="show-tag">' + d.tag + '</span><h3>' + d.title + '</h3><div class="show-text">' + d.text + d.link + '</div>';
     feat.classList.remove('swap'); void feat.offsetWidth; feat.classList.add('swap');
   };
   show(0);
