@@ -194,7 +194,7 @@ if (!upcoming.length) document.getElementById('dates-empty').hidden = false;
     tag: c.querySelector('.tag').textContent,
     title: c.querySelector('h3').textContent,
     text: [...c.querySelectorAll('.card-body p')].map(p => p.outerHTML).join(''),
-    link: c.querySelector('.link').outerHTML
+    link: c.querySelector('.btn[download]').outerHTML
   }));
   const bg = document.createElement('div');
   bg.className = 'show-bg';
@@ -222,13 +222,13 @@ if (!upcoming.length) document.getElementById('dates-empty').hidden = false;
     buttons.forEach((b, n) => b.classList.toggle('sel', n === i));
     sec.style.setProperty('--show-bg', /lemons/.test(d.img) ? '#601219' : '#111');
     bg.innerHTML = '<img src="' + d.img + '" alt="' + d.alt + '">';
-    feat.innerHTML = '<img class="show-pic" src="' + d.img + '" alt="' + d.alt + '"><span class="show-tag">' + d.tag + '</span><h3>' + d.title + '</h3><div class="show-text">' + d.text + d.link + '</div>';
+    feat.innerHTML = '<img class="show-pic" src="' + d.img + '" alt="' + d.alt + '"><span class="show-tag">' + d.tag + '</span><h3>' + d.title + '</h3><div class="show-text">' + d.text + '</div>' + d.link;
     feat.classList.remove('swap'); void feat.offsetWidth; feat.classList.add('swap');
   };
   show(0);
   const ml = document.createElement('div');
   ml.className = 'm-list';
-  ml.innerHTML = data.map(d => '<article class="m-item"><h3>' + d.title + '</h3><span class="show-tag">' + d.tag + '</span><img class="m-pic" loading="lazy" src="' + d.img + '" alt="' + d.alt + '"><div class="m-text show-text">' + d.text + d.link + '</div></article>').join('');
+  ml.innerHTML = data.map(d => '<article class="m-item"><h3>' + d.title + '</h3><span class="show-tag">' + d.tag + '</span><img class="m-pic" loading="lazy" src="' + d.img + '" alt="' + d.alt + '"><div class="m-text show-text">' + d.text + '</div>' + d.link + '</article>').join('');
   sec.append(ml);
 })();
 

@@ -985,3 +985,98 @@ footer .social svg{width:26px;height:26px}
 
 .nav{padding-top:.25rem;padding-bottom:.25rem}
 @media(max-width:820px){.brand img{height:3.4rem;height:min(3.4rem,13.5vw)}}
+
+/* Lemons: la foto empieza bajo la barra para no cortar las cabezas */
+@media(min-width:901px) and (min-aspect-ratio:1/1){
+  .show-bg img[src*="lemons"]{top:7rem;height:calc(100% - 7rem)}
+}
+
+.nav{padding-top:.2rem;padding-bottom:.2rem}
+.brand img{height:80px;width:auto;max-width:none;flex-shrink:0}
+@media(min-width:821px){.brand img{height:3.9rem}}
+@media(max-width:820px){.brand img{height:min(3.4rem,13vw)}}
+
+/* Lemons recortada a mano (apaisada): se centra en vertical y con degradado pequeño en los bordes */
+@media(min-width:901px) and (min-aspect-ratio:1/1){
+  .show-bg img[src*="lemons"]{top:3.5rem;bottom:0;height:auto;max-height:calc(100% - 7rem);width:auto;max-width:60%;right:4vw;object-fit:contain;
+    -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 3%,#000 97%,transparent 100%),linear-gradient(180deg,transparent 0,#000 3%,#000 97%,transparent 100%);
+    mask-image:linear-gradient(90deg,transparent 0,#000 3%,#000 97%,transparent 100%),linear-gradient(180deg,transparent 0,#000 3%,#000 97%,transparent 100%);
+    -webkit-mask-composite:source-in;mask-composite:intersect}
+}
+#espectaculos .m-pic[src*="lemons"]{aspect-ratio:auto;width:100%;height:auto;max-height:none}
+
+/* Lemons: ocupa todo el alto disponible bajo la barra */
+@media(min-width:901px) and (min-aspect-ratio:1/1){
+  .show-bg img[src*="lemons"]{top:6.4rem;bottom:0;height:calc(100% - 6.4rem);max-height:none;width:auto;max-width:70%;margin:0}
+}
+
+/* Lemons: degradado más suave en las esquinas, que son de tono distinto al fondo */
+@media(min-width:901px) and (min-aspect-ratio:1/1){
+  .show-bg img[src*="lemons"]{
+    -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 4%,#000 90%,transparent 100%),linear-gradient(180deg,transparent 0,#000 7%,#000 94%,transparent 100%),radial-gradient(ellipse farthest-corner at 50% 50%,#000 72%,transparent 100%);
+    mask-image:linear-gradient(90deg,transparent 0,#000 4%,#000 90%,transparent 100%),linear-gradient(180deg,transparent 0,#000 7%,#000 94%,transparent 100%),radial-gradient(ellipse farthest-corner at 50% 50%,#000 72%,transparent 100%);
+    -webkit-mask-composite:source-in,source-in;mask-composite:intersect,intersect}
+}
+@media(min-width:901px) and (min-aspect-ratio:1/1){
+  .show-bg img[src*="lemons"]{
+    -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 6%,#000 80%,transparent 100%),linear-gradient(180deg,transparent 0,#000 12%,#000 94%,transparent 100%),radial-gradient(ellipse farthest-corner at 50% 50%,#000 62%,transparent 100%);
+    mask-image:linear-gradient(90deg,transparent 0,#000 6%,#000 80%,transparent 100%),linear-gradient(180deg,transparent 0,#000 12%,#000 94%,transparent 100%),radial-gradient(ellipse farthest-corner at 50% 50%,#000 62%,transparent 100%)}
+}
+
+/* Lemons: sin degradado arriba ni abajo; solo en los laterales */
+@media(min-width:901px) and (min-aspect-ratio:1/1){
+  .show-bg img[src*="lemons"]{top:4.5rem;height:calc(100% - 4.5rem);
+    -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 6%,#000 80%,transparent 100%);
+    mask-image:linear-gradient(90deg,transparent 0,#000 6%,#000 80%,transparent 100%)}
+}
+@media(min-width:901px) and (min-aspect-ratio:1/1){
+  .show-bg img[src*="lemons"]{
+    -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 2.5%,#000 80%,transparent 100%);
+    mask-image:linear-gradient(90deg,transparent 0,#000 2.5%,#000 80%,transparent 100%)}
+}
+@media(min-width:901px) and (min-aspect-ratio:1/1){
+  .show-bg img[src*="lemons"]{right:0}
+}
+@media(min-width:901px) and (min-aspect-ratio:1/1){
+  .show-bg img[src*="lemons"]{right:2vw;
+    -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 6%,#000 92%,transparent 100%);
+    mask-image:linear-gradient(90deg,transparent 0,#000 6%,#000 92%,transparent 100%)}
+}
+
+#espectaculos .btn[download]{margin-top:.6rem}
+#espectaculos .btn[download]{display:inline-flex;align-items:center;gap:.5rem}
+#espectaculos .btn[download] svg{width:1.4rem;height:1.4rem;flex:0 0 auto}
+
+/* Compañía (escritorio): contenido a la izquierda y foto grande a la derecha */
+@media(min-width:901px) and (min-aspect-ratio:1/1){
+  #compania{position:relative}
+  #compania>h2,#compania .about,#compania .sub,#compania .chips{max-width:47%}
+  #compania .about{display:block}
+  #compania .about .stats{margin-top:1.5rem}
+  #compania .about .polaroid{position:absolute;top:50%;right:0;transform:translateY(-50%);width:49%;max-width:none;margin:0;padding:0;border:3px solid var(--ink);border-radius:var(--radius,10px);box-shadow:10px 10px 0 var(--lemon);background:#000;overflow:visible}
+  #compania .about .polaroid::before{display:none}
+  #compania .about .polaroid img{aspect-ratio:4/3;object-position:50% 50%;border-radius:calc(var(--radius,10px) - 3px);box-shadow:none}
+}
+
+/* Botones de dossier: debajo del texto, fondo blanco y sombra negra */
+#espectaculos .btn[download]{margin-top:2rem;background:#fff;color:var(--ink);border:3px solid var(--ink);box-shadow:5px 5px 0 #000}
+#espectaculos .btn[download]:hover{background:#fff;box-shadow:7px 7px 0 #000}
+#espectaculos .btn[download] svg{width:1.5rem;height:1.5rem}
+
+/* Dossier: botón fuera del recuadro de texto, con icono amarillo */
+#espectaculos .btn[download]{margin-top:1.6rem;align-self:flex-start;justify-self:start;width:fit-content}
+#espectaculos .btn[download] svg{width:1.4rem;height:1.4rem;padding:5px;box-sizing:content-box;color:var(--lemon);background:var(--ink);border-radius:6px}
+#compania .about{transform:none!important;opacity:1!important}
+@media(min-width:901px) and (min-aspect-ratio:1/1){
+  #compania .about .polaroid{width:44vw!important;right:max(5vw,calc((100vw - 1300px)/2 + 5vw))}
+}
+@media(max-width:900px),(max-aspect-ratio:999/1000){#espectaculos .btn[download]{margin:1rem 0 .5rem}}
+@media(min-width:901px) and (min-aspect-ratio:1/1){
+  #compania .about .polaroid{width:41vw!important}
+  #compania>h2,#compania .about,#compania .sub,#compania .chips{max-width:43%}
+}
+
+/* Dossier: sombra amarilla; icono negro sobre amarillo */
+#espectaculos .btn[download]{box-shadow:5px 5px 0 var(--lemon)}
+#espectaculos .btn[download]:hover{box-shadow:7px 7px 0 var(--lemon)}
+#espectaculos .btn[download] svg{color:var(--ink);background:var(--lemon)}
