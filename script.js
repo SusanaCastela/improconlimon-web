@@ -73,7 +73,7 @@ if (!upcoming.length) document.getElementById('dates-empty').hidden = false;
   addEventListener('wheel', e => {
     // Firefox envía la rueda del ratón en "líneas" (deltaMode 1), no en píxeles
     const dy = e.deltaMode === 1 ? e.deltaY * 40 : e.deltaMode === 2 ? e.deltaY * innerHeight : e.deltaY;
-    if (e.ctrlKey || Math.abs(dy) < 4 || innerWidth < 820) return;
+    if (e.ctrlKey || Math.abs(dy) < 4 || innerWidth < 820 || innerWidth < innerHeight) return;
     const now = performance.now();
     // Bloqueado hasta que termine la animación y cese la inercia de la rueda/trackpad
     if (locked) {
