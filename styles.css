@@ -1240,3 +1240,43 @@ footer .social svg{width:26px;height:26px}
   #contratacion{background:linear-gradient(180deg,#000 0,#000 270px,rgba(0,0,0,.1) 400px,rgba(0,0,0,.1) 650px,#000 800px),url(img/show/contratacion.jpg) center 290px/100% auto no-repeat #000!important}
   #contratacion .contact-info{padding-bottom:20rem}
 }
+@media(min-width:901px) and (min-aspect-ratio:1/1){
+  #fechas{background:#000!important;position:relative;isolation:isolate;max-width:none!important;padding-left:max(5vw,calc((100vw - 1300px)/2 + 5vw))!important;padding-right:max(5vw,calc((100vw - 1300px)/2 + 5vw))!important}
+  #fechas::before{content:"";position:absolute;z-index:-1;left:0;top:0;bottom:0;width:50vw;background:url(img/show/fechas-2.jpg) 30% center/cover;-webkit-mask-image:linear-gradient(90deg,#000 55%,transparent 100%),linear-gradient(180deg,#000 80%,transparent 100%);mask-image:linear-gradient(90deg,#000 55%,transparent 100%),linear-gradient(180deg,#000 80%,transparent 100%);-webkit-mask-composite:source-in;mask-composite:intersect}
+  #fechas .dates{margin-left:auto;width:min(56vw,760px);grid-template-columns:1fr 1fr;gap:1.1rem 1.3rem}
+  #fechas .date-card{flex-direction:row;flex-wrap:wrap;align-items:center;gap:.4rem .9rem;padding:.7rem .9rem}
+  #fechas .date-info{flex:1 1 100%}
+  #fechas .date-info h3{font-size:1.5rem}
+  #fechas .date-info p{font-size:.82rem;line-height:1.3}
+}
+@media(min-width:901px) and (min-aspect-ratio:1/1){
+  #fechas::before{width:42vw;background-position:35% center}
+  #fechas .dates{margin-top:-1rem;width:min(47vw,720px);gap:.7rem 1rem}
+  #fechas .date-card{padding:.5rem .8rem;gap:.2rem .8rem}
+  #fechas .date-info h3{display:none}
+}
+/* Entradas: fechas como tickets */
+#fechas .date-card{position:relative;display:grid!important;grid-template-columns:6.2rem 1fr;grid-template-areas:"box info" "box btn";column-gap:1rem;row-gap:.3rem;align-items:center;padding:0!important;overflow:visible;background:#fff;border:3px solid #000;border-radius:14px;box-shadow:6px 6px 0 var(--lemon)!important;flex:none;min-width:0}
+#fechas .date-box{grid-area:box;align-self:stretch;display:flex!important;flex-direction:column;justify-content:center;align-items:center;gap:0;min-width:0!important;padding:.5rem .3rem!important;margin:0;transform:none!important;background:var(--lemon);border:0;border-right:3px dashed #000;border-radius:11px 0 0 11px;box-shadow:none;line-height:.95}
+#fechas .date-box b{display:block;font-size:3.4rem;font-weight:900}
+#fechas .date-box span{display:block;font-size:1.7rem;text-transform:uppercase}
+#fechas .date-box small{display:block;font-size:.95rem;text-transform:capitalize;margin-top:.2rem}
+#fechas .date-card::before,#fechas .date-card::after{content:"";position:absolute;left:calc(6.2rem - .65rem - 1.5px);width:1.3rem;height:1.3rem;border-radius:50%;background:#000;z-index:1}
+#fechas .date-card::before{top:-.75rem}
+#fechas .date-card::after{bottom:-.75rem}
+#fechas .date-info{grid-area:info;width:auto!important;min-width:0!important;flex:none;padding:.7rem .9rem 0 0}
+#fechas .date-info h3{display:none}
+#fechas .date-info .when{font-family:'Londrina Solid',cursive;font-size:1.9rem;font-weight:900;line-height:1;margin-bottom:.25rem}
+#fechas .date-info .where{font-size:.85rem;line-height:1.3}
+#fechas .date-info .price{font-size:.8rem;margin-top:.15rem}
+#fechas .date-card .btn{grid-area:btn;justify-self:start;margin:0 0 .8rem;padding:.35rem 1rem;font-size:1.05rem;box-shadow:3px 3px 0 #000}
+@media(max-width:900px),(max-aspect-ratio:1/1){
+  #fechas .date-card{flex:0 0 min(88%,26rem)!important;grid-template-columns:5.2rem 1fr}
+  #fechas .date-box b{font-size:2.8rem}
+  #fechas .date-card::before,#fechas .date-card::after{left:calc(5.2rem - .65rem - 1.5px)}
+  #fechas .date-info .where{font-size:.9rem}
+}
+#fechas .date-card .btn{justify-self:end;margin:0 .9rem .8rem 0}
+@media(min-width:901px) and (min-aspect-ratio:1/1){#fechas .dates{gap:1.5rem 1.8rem;margin-top:-1.5rem}}
+@media(max-width:900px),(max-aspect-ratio:1/1){#fechas .dates{gap:1.2rem}}
+#fechas .date-card{box-shadow:6px 6px 0 #b89b00!important}
