@@ -1158,3 +1158,85 @@ footer .social svg{width:26px;height:26px}
   #compania .about .stats b{background:none!important;border:0!important;padding:0!important;font-size:1.9rem}
   #contratacion{background:linear-gradient(rgba(0,0,0,.4),rgba(0,0,0,.7)),url(img/show/contratacion.jpg) center 30%/cover no-repeat #000!important}
 }
+@media(min-width:901px) and (min-aspect-ratio:1/1){
+  #contratacion{padding-left:40vw!important;padding-right:3vw!important;max-width:none!important;width:100%}
+  #contratacion::before{width:44vw;aspect-ratio:auto;-webkit-mask-image:linear-gradient(90deg,#000 62%,transparent 100%);mask-image:linear-gradient(90deg,#000 62%,transparent 100%);background-position:center 30%}
+  #contratacion .contact{gap:2rem;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr)}
+  .big-title{font-size:clamp(2.6rem,4.4vw,4.4rem)!important}
+  .contact-info>p:not(.big-title){font-size:1rem}
+  .cbtn{font-size:1.15rem}
+}
+.contact-right{display:flex;flex-direction:column;gap:1.4rem;min-width:0}
+@media(min-width:901px) and (min-aspect-ratio:1/1){
+  #contratacion{padding-left:5vw!important;padding-right:5vw!important;max-width:1300px!important}
+  #contratacion::before{left:max(0px,calc(50% - 650px + 24vw));width:36vw;max-width:520px;aspect-ratio:auto;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 22%,#000 78%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 22%,#000 78%,transparent 100%);background-position:center 35%}
+  #contratacion .contact{grid-template-columns:minmax(0,26vw) minmax(0,1fr);gap:0;align-items:center!important}
+  #contratacion .contact-right{justify-self:end;width:min(36vw,500px);gap:1rem}
+  #contratacion .contact-btns{flex-direction:column;align-items:flex-start;gap:.6rem}
+  #contratacion .contact-btns .cbtn{font-size:1.15rem;padding:.35rem 1rem .35rem .4rem}
+  #contratacion form{margin-top:.6rem}
+  #contratacion form textarea{height:4.5rem}
+  .big-title{font-size:clamp(3rem,5.2vw,5rem)!important}
+  .contact-info>p:not(.big-title){font-size:1.1rem}
+}
+@media(min-width:901px) and (min-aspect-ratio:1/1){
+  #contratacion{max-width:none!important;padding-left:max(5vw,calc((100vw - 1300px)/2 + 5vw))!important;padding-right:max(5vw,calc((100vw - 1300px)/2 + 5vw))!important}
+  #contratacion::before{left:max(24vw,calc(50% - 650px + 24vw))}
+  #contratacion .contact{grid-template-columns:minmax(0,26vw) minmax(0,1fr);grid-template-rows:auto auto;align-content:center;align-items:start!important}
+  #contratacion .contact-right{display:contents}
+  #contratacion .contact-info{grid-column:1;grid-row:1;height:auto}
+  #contratacion .contact-btns{grid-column:1;grid-row:2;margin-top:1rem}
+  #contratacion form{grid-column:2;grid-row:1/span 2;justify-self:end;width:min(36vw,500px);align-self:center;margin:0}
+  #contratacion form textarea{height:6rem}
+}
+@media(min-width:901px) and (min-aspect-ratio:1/1){
+  #contratacion .contact-info{align-self:end}
+  #contratacion .contact-btns{align-self:start}
+}
+@media(min-width:901px) and (min-aspect-ratio:1/1){
+  #contratacion .contact{grid-template-columns:minmax(0,22vw) minmax(0,1fr)}
+  #contratacion::before{left:max(12vw,calc(50% - 650px + 12vw))}
+  #contratacion .event-types{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;width:100%}
+  #contratacion .event-types li{text-align:center;padding:.15rem .4rem}
+  #contratacion form .form-tag{font-size:1.5rem;padding:.2rem .9rem;top:-1.7rem}
+}
+@media(min-width:901px) and (min-aspect-ratio:1/1){
+  #contratacion::before{left:max(17vw,calc(50% - 650px + 17vw))}
+  #contratacion .event-types{align-items:start}
+  #contratacion .event-types li{font-size:1rem;white-space:nowrap;padding:.15rem .3rem}
+}
+@media(min-width:901px) and (min-aspect-ratio:1/1){
+  #contratacion .contact{grid-template-rows:auto auto auto;align-content:start;row-gap:1rem;padding-top:.8rem}
+  #contratacion .contact-info{display:contents}
+  #contratacion .contact-info>p{grid-column:1;grid-row:1;margin:0;align-self:start}
+  #contratacion .event-types{grid-column:1;grid-row:2;display:flex;flex-wrap:wrap;gap:.6rem;width:40vw;max-width:600px;position:relative;z-index:2;align-self:start}
+  #contratacion .event-types li{font-size:1.1rem;padding:.15rem .8rem}
+  #contratacion .contact-btns{grid-row:3;margin-top:.5rem}
+  #contratacion form{grid-row:1/span 3;align-self:start;margin-top:.8rem}
+}
+@media(min-width:901px) and (min-aspect-ratio:1/1){
+  #contratacion .contact{grid-template-rows:auto auto 1fr}
+}
+@media(min-width:901px) and (min-aspect-ratio:1/1){
+  #contratacion .event-types{grid-row:1}
+  #contratacion .contact-info>p{grid-row:2}
+}
+#contratacion .event-types li{background:#fff!important}
+@media(min-width:901px) and (min-aspect-ratio:1/1){
+  #contratacion .contact-btns{align-self:end;margin:0}
+}
+#contratacion form{background:#feff9c!important}
+#contratacion form input,#contratacion form textarea{background:#fff!important}
+@media(min-width:901px) and (min-aspect-ratio:1/1){
+  #contratacion::before{-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 22%,#000 78%,transparent 100%),linear-gradient(180deg,#000 60%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 22%,#000 78%,transparent 100%),linear-gradient(180deg,#000 60%,transparent 100%);-webkit-mask-composite:source-in;mask-composite:intersect}
+}
+@media(min-width:901px) and (min-aspect-ratio:1/1){
+  #contratacion .contact-btns{margin-bottom:3.5rem}
+}
+@media(max-width:900px),(max-aspect-ratio:1/1){
+  #contratacion{background:linear-gradient(180deg,rgba(0,0,0,.35) 0,rgba(0,0,0,.55) 25%,#000 48%),url(img/show/contratacion.jpg) center top/100% auto no-repeat #000!important}
+}
+@media(max-width:900px),(max-aspect-ratio:1/1){
+  #contratacion{background:linear-gradient(180deg,#000 0,#000 270px,rgba(0,0,0,.1) 400px,rgba(0,0,0,.1) 650px,#000 800px),url(img/show/contratacion.jpg) center 290px/100% auto no-repeat #000!important}
+  #contratacion .contact-info{padding-bottom:20rem}
+}

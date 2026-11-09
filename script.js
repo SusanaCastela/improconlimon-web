@@ -250,6 +250,14 @@ document.querySelectorAll('a.cbtn[href^="tel:"]').forEach(a=>{
 (() => {
   const form = document.getElementById('form'), msg = document.getElementById('form-msg');
   if (!form) return;
+  // Mensajes de validación del navegador en castellano
+  form.querySelectorAll('input,textarea').forEach(f => {
+    f.addEventListener('invalid', () => {
+      f.setCustomValidity(f.validity.valueMissing ? 'Por favor, rellena este campo.' :
+        f.validity.typeMismatch ? 'Por favor, introduce un correo electrónico válido (por ejemplo, nombre@correo.com).' : '');
+    });
+    f.addEventListener('input', () => f.setCustomValidity(''));
+  });
   form.addEventListener('submit', async e => {
     e.preventDefault();
     const d = new FormData(form);
