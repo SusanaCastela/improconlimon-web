@@ -137,13 +137,18 @@ if (!upcoming.length) document.getElementById('dates-empty').hidden = false;
       ? [src.src, ...extra].slice(0, 3).map((u, n) => (extra.length ? { u, ...real } : { u, ...fill[n] }))
       : [];
     if (src && !extra.length) while (photos.length < 3) photos.push({ u: src.src, ...fill[photos.length] });
-    const im = p => '<img src="' + p.u + '" alt="' + (src ? src.alt : '') + '" style="transform:scale(' + p.z + ');object-position:' + p.p + '">';
+    // Encuadre de las polaroids (menor x = el sujeto se ve más a la derecha)
+    const adj = { 'ana/2': { p: '34% 20%' }, 'gerard/3': { z: 1, p: '50% 0%' }, 'hector/3': { p: '78% 20%' }, 'ionai/2': { p: '78% 20%' }, 'ionai/3': { p: '78% 20%' }, 'javi/2': { p: '22% 20%' } };
+    photos.forEach(p => Object.assign(p, adj[(p.u.match(/img\/([a-z]+\/\d)\.jpg/) || [])[1]]));
+    const ps = p => 'transform:' + (p.tx ? 'translateX(' + p.tx + '%) ' : '') + 'scale(' + p.z + ');object-position:' + p.p;
+    const ms = p => 'transform:scale(1);object-position:' + p;
+    const im = (p, main) => '<img src="' + p.u + '" alt="' + (src ? src.alt : '') + '" data-k="' + ((p.u.match(/img\/([a-z]+\/\d)\.jpg/) || [])[1] || '') + '" data-ps="' + ps(p) + '" data-p="' + p.p + '" style="' + (main ? ms(p.p) : ps(p)) + '">';
     const nm = a.querySelector('h4').textContent;
     const nick = a.querySelector('.nick').textContent;
     const stage = '<div class="head"><h3>' + nm + '</h3><p class="nick">' + nick + '</p></div>';
     document.getElementById('actores').style.setProperty('--cast-bg', (src && src.dataset.bg) || '#fff');
     bg.dataset.who = src ? (src.getAttribute('src').split('/')[1] || '') : '';
-    bg.innerHTML = src ? im(photos[0]) : '<div class="noimg">' + a.querySelector('.noimg').textContent + '</div>';
+    bg.innerHTML = src ? im(photos[0], true) : '<div class="noimg">' + a.querySelector('.noimg').textContent + '</div>';
     polas.innerHTML = src
       ? photos.slice(1).map((p, n) => '<button type="button" class="pola p' + (n + 1) + '" aria-label="Ver foto ' + (n + 2) + '"><span class="ph">' + im(p) + '</span></button>').join('')
       : '';
@@ -152,7 +157,11 @@ if (!upcoming.length) document.getElementById('dates-empty').hidden = false;
       polas.querySelectorAll('.pola').forEach(btn => btn.onclick = () => {
         const mi = bg.querySelector('img'), si = btn.querySelector('img');
         [mi.src, si.src] = [si.src, mi.src];
-        [mi.style.cssText, si.style.cssText] = [si.style.cssText, mi.style.cssText];
+        [mi.dataset.k, si.dataset.k] = [si.dataset.k, mi.dataset.k];
+        [mi.dataset.ps, si.dataset.ps] = [si.dataset.ps, mi.dataset.ps];
+        [mi.dataset.p, si.dataset.p] = [si.dataset.p, mi.dataset.p];
+        mi.style.cssText = ms(mi.dataset.p);
+        si.style.cssText = si.dataset.ps;
       });
     }
     feat.classList.remove('swap'); void feat.offsetWidth; feat.classList.add('swap');

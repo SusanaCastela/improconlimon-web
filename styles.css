@@ -904,7 +904,12 @@ footer .social svg{width:26px;height:26px}
 
 /* Escritorio: desplazar a la derecha las fotos cuyo rostro queda tapado por el texto */
 @media(min-width:901px) and (min-aspect-ratio:1/1){
-  .cast-bg[data-who="gerard"] img,.cast-bg[data-who="hector"] img,.cast-bg[data-who="javi"] img{translate:20vw 0}
+  .cast-bg img[data-k="gerard/1"],.cast-bg img[data-k="hector/1"],.cast-bg img[data-k="javi/1"]{translate:20vw 0}
+  .cast-bg img[data-k="ana/2"],.cast-bg img[data-k="javi/2"],.cast-bg img[data-k="susana/2"]{translate:6vw 0}
+  .cast-bg img[data-k="gerard/3"]{translate:0vw 0}
+  .cast-bg img[data-k="hector/3"]{translate:-5vw 0}
+  .cast-bg img[data-k="ionai/2"]{translate:23vw 0}
+  .cast-bg img[data-k="ionai/3"]{translate:17vw 0}
 }
 
 /* Foto vertical de Lemon's impro night: se muestra entera, a toda la altura */
@@ -1302,4 +1307,20 @@ footer .social svg{width:26px;height:26px}
 @media(max-width:900px) and (min-aspect-ratio:1/1){
   .hero-inner .eyebrow{text-shadow:none!important;filter:none!important;background:#000!important;color:#fff!important}
   .hero-bg{background-position:75% center!important}
+}
+/* Posición de cada foto ampliada (escritorio); gana a las reglas por actor anteriores */
+@media(min-width:901px) and (min-aspect-ratio:1/1){
+  .cast-bg[data-who] img[data-k="gerard/3"]{translate:0vw 0}
+  .cast-bg[data-who] img[data-k="gerard/2"]{translate:14vw 0}
+  .cast-bg[data-who] img[data-k="javi/2"]{translate:31vw 4vh}
+  .cast-bg[data-who] img[data-k="susana/2"]{translate:6vw -17vh}
+}
+@media(min-width:901px) and (min-aspect-ratio:1/1){
+  .cast-bg[data-who] img[data-k="susana/3"]{scale:1;translate:6vw 0}
+}
+@media(min-width:901px) and (min-aspect-ratio:1/1){
+  .cast-bg[data-who] img[data-k="hector/2"],.cast-bg[data-who] img[data-k="hector/3"]{translate:14vw 0}
+}
+@media(min-width:901px) and (min-aspect-ratio:1/1){
+  .cast-bg[data-who] img[data-k="ana/2"]{translate:18vw 0}
 }
