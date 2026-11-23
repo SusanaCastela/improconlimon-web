@@ -945,8 +945,8 @@ footer .social svg{width:26px;height:26px}
 
 /* Héctor en móvil (marco vertical): se desplaza el recorte para que no se corten los brazos */
 @media(max-width:900px),(max-aspect-ratio:1/1){
-  #actores .cast-bg img[src*="hector/1"]{content:url(img/hector/1-movil.jpg?v=3);object-position:50% 20%!important}
-  #actores .cast-bg img[src*="hector/2"]{object-position:18% 20%!important}
+  #actores .m-pic[src*="hector/1"]{content:url(img/hector/1-movil.jpg?v=4);object-position:50% 20%!important}
+  #actores .m-pic[src*="hector/2"]{object-position:18% 20%!important}
 }
 
 /* Polaroids de Actores (escritorio): escalonadas y con distinta inclinación */
