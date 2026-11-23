@@ -940,6 +940,15 @@ footer .social svg{width:26px;height:26px}
 /* Miniatura de Susana: el limón de la cabeza queda en la parte alta de la foto */
 #actores .cast img[src*="susana/1"]{object-position:center 0%!important}
 
+/* Miniatura de Héctor: el sujeto está a la izquierda de la foto */
+#actores .cast img[src*="hector/1"]{object-position:15% 20%!important}
+
+/* Héctor en móvil (marco vertical): se desplaza el recorte para que no se corten los brazos */
+@media(max-width:900px),(max-aspect-ratio:1/1){
+  #actores .cast-bg img[src*="hector/1"]{object-position:8% 20%!important}
+  #actores .cast-bg img[src*="hector/2"]{object-position:18% 20%!important}
+}
+
 /* Polaroids de Actores (escritorio): escalonadas y con distinta inclinación */
 @media(min-width:901px) and (min-aspect-ratio:1/1){
   #actores .cast-wrap{--ps:min(22rem,32svh)}
@@ -1043,7 +1052,7 @@ footer .social svg{width:26px;height:26px}
   .show-bg img[src*="lemons"]{right:0}
 }
 @media(min-width:901px) and (min-aspect-ratio:1/1){
-  .show-bg img[src*="lemons"]{right:2vw;
+  .show-bg img[src*="lemons"]{right:8vw;top:3rem;height:calc(100% - 3rem);scale:1.5;transform-origin:center top;translate:0 -4rem;
     -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 6%,#000 92%,transparent 100%);
     mask-image:linear-gradient(90deg,transparent 0,#000 6%,#000 92%,transparent 100%)}
 }
@@ -1282,9 +1291,10 @@ footer .social svg{width:26px;height:26px}
   #fechas .date-info .where{font-size:.9rem}
 }
 #fechas .date-card .btn{justify-self:end;margin:0 .9rem .8rem 0}
-@media(min-width:901px) and (min-aspect-ratio:1/1){#fechas .dates{gap:1.5rem 1.8rem;margin-top:-1.5rem}}
+@media(min-width:901px) and (min-aspect-ratio:1/1){#fechas .dates{gap:1.5rem 1.8rem;margin-top:1rem}}
 @media(max-width:900px),(max-aspect-ratio:1/1){#fechas .dates{gap:1.2rem}}
 #fechas .date-card{box-shadow:6px 6px 0 #b89b00!important}
+#fechas>h2{box-shadow:6px 6px 0 #fff}
 @media(max-width:900px),(max-aspect-ratio:1/1){
   #fechas{background:linear-gradient(180deg,#000 0,#000 52%,rgba(0,0,0,.15) 78%,rgba(0,0,0,.1) 100%),url(img/show/fechas-2.jpg) 30% bottom/100% auto no-repeat #000!important;padding-bottom:15rem!important}
 }

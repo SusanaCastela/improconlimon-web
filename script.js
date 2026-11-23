@@ -138,7 +138,7 @@ if (!upcoming.length) document.getElementById('dates-empty').hidden = false;
       : [];
     if (src && !extra.length) while (photos.length < 3) photos.push({ u: src.src, ...fill[photos.length] });
     // Encuadre de las polaroids (menor x = el sujeto se ve más a la derecha)
-    const adj = { 'ana/2': { p: '34% 20%' }, 'gerard/3': { z: 1, p: '50% 0%' }, 'hector/3': { p: '78% 20%' }, 'ionai/2': { p: '78% 20%' }, 'ionai/3': { p: '78% 20%' }, 'javi/2': { p: '22% 20%' } };
+    const adj = { 'ana/2': { p: '34% 20%' }, 'gerard/3': { z: 1, p: '50% 0%' }, 'hector/2': { p: '100% 20%' }, 'hector/3': { p: '78% 20%' }, 'ionai/2': { p: '78% 20%' }, 'ionai/3': { p: '78% 20%' }, 'javi/2': { p: '22% 20%' } };
     photos.forEach(p => Object.assign(p, adj[(p.u.match(/img\/([a-z]+\/\d)\.jpg/) || [])[1]]));
     const ps = p => 'transform:' + (p.tx ? 'translateX(' + p.tx + '%) ' : '') + 'scale(' + p.z + ');object-position:' + p.p;
     const ms = p => 'transform:scale(1);object-position:' + p;
