@@ -945,7 +945,7 @@ footer .social svg{width:26px;height:26px}
 
 /* Héctor en móvil (marco vertical): se desplaza el recorte para que no se corten los brazos */
 @media(max-width:900px),(max-aspect-ratio:1/1){
-  #actores .m-pic[src*="hector/1"]{content:url(img/hector/1-movil.jpg?v=5);object-position:50% 20%!important}
+  #actores .m-pic[src*="hector/1"]{content:url(img/hector/1-movil.jpg?v=6);object-position:50% 20%!important}
   #actores .m-pic[src*="hector/2"]{object-position:18% 20%!important}
 }
 
